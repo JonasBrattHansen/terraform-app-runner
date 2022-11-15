@@ -5,6 +5,11 @@ terraform {
       version = "4.33.0"
     }
   }
+  backend "s3" {
+    bucket = "pgr301-2021-terraform-state"
+    key    = "<student-navn>/apprunner-lab.state"
+    region = "eu-north-1"
+  }
 }
 
 resource "aws_s3_bucket" "mybucket" {
